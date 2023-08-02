@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <div class="hero h-72 bg-base-200">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold">Recipes For You</h1>
+        <p class="py-6">Check out recipes for dishes from around the world!</p>
+        <button class="btn btn-success" onclick="create.showModal()">Add Your Recipe</button>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Open the modal using ID.showModal() method -->
+  <dialog id="details" class="modal">
+    <form method="dialog" class="modal-box">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+      <h3 id="detailsName" class="font-bold text-2xl pb-4"></h3>
+      <h3 class="font-bold text-lg">Ingredients</h3>
+      <p id="detailsIngredients"  class="py-4"></p>
+      <h3 class="font-bold text-lg">Steps</h3>
+      <p id="detailsSteps" class="py-4"></p>
+    </form>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+  <dialog id="create" class="modal">
+    <form method="dialog" class="modal-box">
+
+      <h3 class="font-bold text-lg">New Recipe</h3>
+      <p class="py-4">Press ESC key or click outside to cancel</p>
+      <div class="form-control w-full ">
+        <label class="label">
+          <span class="label-text">What your recipe name?</span>
+        </label>
+        <input type="text" id="newRecipeName" placeholder="Type here" class="input input-bordered input-success w-full" />
+        <label class="label">
+          <span class="label-text-alt text-error">* Required</span>
+        </label>
+      </div>
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">Where is your recipe from?</span>
+        </label>
+        <input type="text" id="newRecipeLocation" placeholder="Type here" class="input input-bordered input-success w-full" />
+        <label class="label">
+          <span class="label-text-alt text-error">* Required</span>
+        </label>
+      </div>
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">Pick the type of this dish</span>
+        </label>
+        <select id="newRecipeType" class="select select-bordered">
+          <option selected>Breakfast</option>
+          <option>Brunch</option>
+          <option>Snack</option>
+          <option>Lunch</option>
+          <option>Dessert</option>
+          <option>Drink</option>
+          <option>Dinner</option>
+        </select>
+        <label class="label">
+          <span class="label-text-alt text-error">* Required</span>
+        </label>
+      </div>
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">Ingredients</span>
+        </label>
+        <textarea id="newRecipeIngredients" placeholder="2 Eggs, 1/2 cup of Sugar, 1 teaspoon of Butter..." class="textarea textarea-success w-full" ></textarea>
+      </div>
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">How do you make it?</span>
+        </label>
+        <textarea id="newRecipeSteps" placeholder="Mix the eggs with the butter..." class="textarea textarea-success w-full" ></textarea>
+      </div>
+      <div class="w-full pt-4">
+        <button class="btn btn-block btn-success" onclick="insertRecipe()">Add Recipe</button>
+      </div>
+    </form>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+
+  <dialog id="edit" class="modal">
+    <form method="dialog" class="modal-box">
+      <h3 class="font-bold text-lg">Edit Recipe</h3>
+      <p class="py-4">Press ESC key or click outside to cancel</p>
+      <input type="hidden" id="editRecipeIndexRow" value=""/>
+      <div class="form-control w-full ">
+        <label class="label">
+          <span class="label-text">What your recipe name?</span>
+        </label>
+        <input type="text" id="editRecipeName" placeholder="Type here" class="input input-bordered input-success w-full" />
+        <label class="label">
+          <span class="label-text-alt text-error">* Required</span>
+        </label>
+      </div>
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">Where is your recipe from?</span>
+        </label>
+        <input type="text" id="editRecipeLocation" placeholder="Type here" class="input input-bordered input-success w-full" />
+        <label class="label">
+          <span class="label-text-alt text-error">* Required</span>
+        </label>
+      </div>
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">Pick the type of this dish</span>
+        </label>
+        <select id="editRecipeType" class="select select-bordered">
+          <option selected>Breakfast</option>
+          <option>Brunch</option>
+          <option>Snack</option>
+          <option>Lunch</option>
+          <option>Dessert</option>
+          <option>Drink</option>
+          <option>Dinner</option>
+        </select>
+        <label class="label">
+          <span class="label-text-alt text-error">* Required</span>
+        </label>
+      </div>
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">Ingredients</span>
+        </label>
+        <textarea id="editRecipeIngredients" placeholder="2 Eggs, 1/2 cup of Sugar, 1 teaspoon of Butter..." class="textarea textarea-success w-full" ></textarea>
+      </div>
+      <div class="form-control w-full">
+        <label class="label">
+          <span class="label-text">How do you make it?</span>
+        </label>
+        <textarea id="editRecipeSteps" placeholder="Mix the eggs with the butter..." class="textarea textarea-success w-full" ></textarea>
+      </div>
+      <div class="w-full pt-4">
+        <button class="btn btn-block btn-success" onclick="editRecipe()">Edit Recipe</button>
+      </div>
+    </form>
+    <form method="dialog" class="modal-backdrop">
+      <button onclick="cancelEdit()">close</button>
+    </form>
+  </dialog>
+
+  <dialog id="delete" class="modal">
+    <form method="dialog" class="modal-box">
+      <h3 class="font-bold text-lg">Edit Recipe</h3>
+      <p class="py-4">Are you sure that you want to delete this recipe?</p>
+      <input type="hidden" id="deleteRecipeIndexRow" value=""/>
+
+      <div class="w-full flex">
+        <div class="w-1/2 pt-4 pr-1">
+          <button class="btn btn-block btn-error" onclick="cancelDelete()">Cancel</button>
+        </div>
+        <div class="w-1/2 pt-4 pl-1">
+          <button class="btn btn-block btn-success" onclick="deleteRecipe()">Confirm Delete</button>
+        </div>
+      </div>
+    </form>
+    <form method="dialog" class="modal-backdrop">
+      <button onclick="cancelDelete()">close</button>
+    </form>
+  </dialog>
+
+  <div id="recipes-container" class="min-h-16 bg-base-200 flex flex-wrap gap-8 justify-center">
+    <span class="loading loading-ring loading-lg text-success"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
