@@ -1,5 +1,9 @@
+require("dotenv").config();
+
+const token = process.env.TOKEN;
+
 const urlPost =
-  "https://script.google.com/macros/s/AKfycbwFTE6Dd8jubtlssf16nNOcxDUd5qbIaC6QGPrPlYt7NFLnQrsAfhsHCTLAHe67zfDa/exec";
+  "https://script.google.com/macros/s/AKfycbwwS2nxtbJg_o4m2rhBzlpy__zsVRJ8BVV7PwRN8WiQVZygkE11gPtvHRmo8rqiO8tB/exec";
 const urlGet =
   "https://script.google.com/macros/s/AKfycbywRz8G0HtKh9GdRezR8KCAHYpd9_LF8Y0yMOWmqba1Xfz9L6puekDU1lP7p6hLn-c/exec";
 
@@ -147,6 +151,7 @@ async function insertRecipe() {
       location,
       ingredients,
       steps,
+      token,
     };
 
     let options = {
@@ -186,6 +191,7 @@ async function editRecipe() {
       location,
       ingredients,
       steps,
+      token,
     };
 
     let options = {
@@ -216,6 +222,7 @@ async function deleteRecipe() {
     const data = {
       action: "delete",
       rowIndex,
+      token,
     };
 
     let options = {
