@@ -1,5 +1,3 @@
-const token = process.env.TOKEN;
-
 const urlPost =
   "https://script.google.com/macros/s/AKfycbzidl0GCz1m81uoo8mqdUHlu4HSTXt3vzc0BWaQJRAcqlpPPTTQdDlQrDisFInKw6EV/exec";
 const urlGet =
@@ -149,7 +147,6 @@ async function insertRecipe() {
       location,
       ingredients,
       steps,
-      token,
     };
 
     let options = {
@@ -189,7 +186,6 @@ async function editRecipe() {
       location,
       ingredients,
       steps,
-      token,
     };
 
     let options = {
@@ -220,7 +216,6 @@ async function deleteRecipe() {
     const data = {
       action: "delete",
       rowIndex,
-      token,
     };
 
     let options = {
