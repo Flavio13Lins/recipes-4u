@@ -151,7 +151,6 @@ async function insertRecipe() {
 
     let options = {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -191,7 +190,6 @@ async function editRecipe() {
 
     let options = {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
@@ -222,7 +220,6 @@ async function deleteRecipe() {
 
     let options = {
       method: "POST",
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
       },
