@@ -3,7 +3,7 @@ require("dotenv").config();
 const token = process.env.TOKEN;
 
 const urlPost =
-  "https://script.google.com/macros/s/AKfycbwwS2nxtbJg_o4m2rhBzlpy__zsVRJ8BVV7PwRN8WiQVZygkE11gPtvHRmo8rqiO8tB/exec";
+  "https://script.google.com/macros/s/AKfycbzidl0GCz1m81uoo8mqdUHlu4HSTXt3vzc0BWaQJRAcqlpPPTTQdDlQrDisFInKw6EV/exec";
 const urlGet =
   "https://script.google.com/macros/s/AKfycbywRz8G0HtKh9GdRezR8KCAHYpd9_LF8Y0yMOWmqba1Xfz9L6puekDU1lP7p6hLn-c/exec";
 
