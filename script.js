@@ -1,5 +1,5 @@
 const urlPost =
-  "https://script.google.com/macros/s/AKfycbxurFEm0xSs3kFZuEPjWdcY6iXOvb4RtJI5wdwbJChQrnjXnfhSPA6io6ruV8TB203H/exec";
+  "https://script.google.com/macros/s/AKfycbx7viZKs2_1Dx0r9wGJnchVfNjFwvK0BhZf1q5lGYdi-x0ZOreFfOJbUfKdsUvZxSdo/exec";
 const urlGet =
   "https://script.google.com/macros/s/AKfycbywRz8G0HtKh9GdRezR8KCAHYpd9_LF8Y0yMOWmqba1Xfz9L6puekDU1lP7p6hLn-c/exec";
 
