@@ -1,7 +1,7 @@
 const urlPost =
   "https://script.google.com/macros/s/AKfycbyQWw6Ccv1OsWE0FAPTfM5Q39h30M1GiB2mEf91HYF9aWm40iRVOvKQvD56Ai6QpvHc/exec";
 const urlGet =
-  "https://script.google.com/macros/s/AKfycbyzTBwMJ37Z6pseWRH7aR0aVR1LTssChWQt6l9N08r3Lh5UymR0LVmoF-WDbNU8_J_y/exec";
+  "https://script.google.com/macros/s/AKfycbwMSSWBrHoxnTb6UjHp-dO6jyZ81D3TzfyQTTBnTP5zHW9N9BcbXhHLU7qfrxd0VUz4/exec";
 
 const dishesTypesImageMap = {
   Breakfast:
