@@ -30,7 +30,9 @@ async function getRecipeByIndex(index) {
 
 async function loadPage() {
   const res = await fetch(urlGet);
+  console.log({ res });
   const recipes = await res.json();
+  console.log({ recipes });
   const recipesContainer = document.getElementById("recipes-container");
 
   recipesContainer.innerHTML = "";
