@@ -29,6 +29,10 @@ async function getRecipeByIndex(index) {
 }
 
 async function loadPage() {
+  const nickName = "Flavio13Lins";
+  var currentYear = new Date().getFullYear();
+  var footerYear = document.getElementById("thisYear");
+  footerYear.innerHTML = currentYear + " — " + `<strong>${nickName}</strong>`;
   const res = await fetch(urlGet);
   const recipes = await res.json();
   const recipesContainer = document.getElementById("recipes-container");
