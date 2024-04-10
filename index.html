@@ -17,7 +17,6 @@
         <p class="py-6">Check out recipes for dishes from around the world!</p>
         <button class="btn btn-success" onclick="create.showModal()">Add Your Recipe</button>
       </div>
-      
     </div>
   </div>
   <!-- Open the modal using ID.showModal() method -->
@@ -26,7 +25,7 @@
       <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       <h3 id="detailsName" class="font-bold text-2xl pb-4"></h3>
       <h3 class="font-bold text-lg">Ingredients</h3>
-      <p id="detailsIngredients"  class="py-4"></p>
+      <p id="detailsIngredients" class="py-4"></p>
       <h3 class="font-bold text-lg">Steps</h3>
       <p id="detailsSteps" class="py-4"></p>
     </form>
@@ -43,7 +42,8 @@
         <label class="label">
           <span class="label-text">What your recipe name?</span>
         </label>
-        <input type="text" id="newRecipeName" placeholder="Type here" class="input input-bordered input-success w-full" />
+        <input type="text" id="newRecipeName" placeholder="Type here"
+          class="input input-bordered input-success w-full" />
         <label class="label">
           <span class="label-text-alt text-error">* Required</span>
         </label>
@@ -52,7 +52,8 @@
         <label class="label">
           <span class="label-text">Where is your recipe from?</span>
         </label>
-        <input type="text" id="newRecipeLocation" placeholder="Type here" class="input input-bordered input-success w-full" />
+        <input type="text" id="newRecipeLocation" placeholder="Type here"
+          class="input input-bordered input-success w-full" />
         <label class="label">
           <span class="label-text-alt text-error">* Required</span>
         </label>
@@ -78,13 +79,15 @@
         <label class="label">
           <span class="label-text">Ingredients</span>
         </label>
-        <textarea id="newRecipeIngredients" placeholder="2 Eggs, 1/2 cup of Sugar, 1 teaspoon of Butter..." class="textarea textarea-success w-full" ></textarea>
+        <textarea id="newRecipeIngredients" placeholder="2 Eggs, 1/2 cup of Sugar, 1 teaspoon of Butter..."
+          class="textarea textarea-success w-full"></textarea>
       </div>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">How do you make it?</span>
         </label>
-        <textarea id="newRecipeSteps" placeholder="Mix the eggs with the butter..." class="textarea textarea-success w-full" ></textarea>
+        <textarea id="newRecipeSteps" placeholder="Mix the eggs with the butter..."
+          class="textarea textarea-success w-full"></textarea>
       </div>
       <div class="w-full pt-4">
         <button class="btn btn-block btn-success" onclick="insertRecipe()">Add Recipe</button>
@@ -99,12 +102,13 @@
     <form method="dialog" class="modal-box">
       <h3 class="font-bold text-lg">Edit Recipe</h3>
       <p class="py-4">Press ESC key or click outside to cancel</p>
-      <input type="hidden" id="editRecipeIndexRow" value=""/>
+      <input type="hidden" id="editRecipeIndexRow" value="" />
       <div class="form-control w-full ">
         <label class="label">
           <span class="label-text">What your recipe name?</span>
         </label>
-        <input type="text" id="editRecipeName" placeholder="Type here" class="input input-bordered input-success w-full" />
+        <input type="text" id="editRecipeName" placeholder="Type here"
+          class="input input-bordered input-success w-full" />
         <label class="label">
           <span class="label-text-alt text-error">* Required</span>
         </label>
@@ -113,7 +117,8 @@
         <label class="label">
           <span class="label-text">Where is your recipe from?</span>
         </label>
-        <input type="text" id="editRecipeLocation" placeholder="Type here" class="input input-bordered input-success w-full" />
+        <input type="text" id="editRecipeLocation" placeholder="Type here"
+          class="input input-bordered input-success w-full" />
         <label class="label">
           <span class="label-text-alt text-error">* Required</span>
         </label>
@@ -139,13 +144,15 @@
         <label class="label">
           <span class="label-text">Ingredients</span>
         </label>
-        <textarea id="editRecipeIngredients" placeholder="2 Eggs, 1/2 cup of Sugar, 1 teaspoon of Butter..." class="textarea textarea-success w-full" ></textarea>
+        <textarea id="editRecipeIngredients" placeholder="2 Eggs, 1/2 cup of Sugar, 1 teaspoon of Butter..."
+          class="textarea textarea-success w-full"></textarea>
       </div>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">How do you make it?</span>
         </label>
-        <textarea id="editRecipeSteps" placeholder="Mix the eggs with the butter..." class="textarea textarea-success w-full" ></textarea>
+        <textarea id="editRecipeSteps" placeholder="Mix the eggs with the butter..."
+          class="textarea textarea-success w-full"></textarea>
       </div>
       <div class="w-full pt-4">
         <button class="btn btn-block btn-success" onclick="editRecipe()">Edit Recipe</button>
@@ -160,7 +167,7 @@
     <form method="dialog" class="modal-box">
       <h3 class="font-bold text-lg">Edit Recipe</h3>
       <p class="py-4">Are you sure that you want to delete this recipe?</p>
-      <input type="hidden" id="deleteRecipeIndexRow" value=""/>
+      <input type="hidden" id="deleteRecipeIndexRow" value="" />
 
       <div class="w-full flex">
         <div class="w-1/2 pt-4 pr-1">
