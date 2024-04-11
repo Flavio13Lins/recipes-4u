@@ -5,3 +5,8 @@
   --quaternary-color:#CBD5A9;
   --quinary-color:#29374D;
 }
+
+img.socialIcon {
+  height: 24px;
+  width: 24px;
+}
