@@ -10,19 +10,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-base-200">
   <div class="hero h-72 bg-base-200">
     <div class="hero-content text-center">
       <div class="max-w-md">
         <h1 class="text-5xl font-bold">Recipes For You</h1>
         <p class="py-6">Check out recipes for dishes from around the world!</p>
-        <button class="btn btn-success" onclick="create.showModal()">Add Your Recipe</button>
+        <button class="btn"
+          style="border-color: var(--tertiary-color); background-color: var(--tertiary-color); color: var(--primary-color);"
+          onclick="create.showModal()">Add Your
+          Recipe</button>
       </div>
     </div>
   </div>
   <!-- Open the modal using ID.showModal() method -->
   <dialog id="details" class="modal">
-    <form method="dialog" class="modal-box">
+    <form method="dialog" class="modal-box" style="max-height: 300px;">
       <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
       <h3 id="detailsName" class="font-bold text-2xl pb-4"></h3>
       <h3 class="font-bold text-lg">Ingredients</h3>
@@ -35,35 +38,35 @@
     </form>
   </dialog>
   <dialog id="create" class="modal">
-    <form method="dialog" class="modal-box">
+    <form method="dialog" class="modal-box" style="max-height: 500px;">
 
       <h3 class="font-bold text-lg">New Recipe</h3>
       <p class="py-4">Press ESC key or click outside to cancel</p>
-      <div class="form-control w-full ">
+      <div class="form-control w-full">
         <label class="label">
           <span class="label-text">What your recipe name?</span>
         </label>
-        <input type="text" id="newRecipeName" placeholder="Type here"
-          class="input input-bordered input-success w-full" />
+        <input type="text" id="newRecipeName" placeholder="Type here" class="input input-bordered w-full"
+          style="border-color: var(--tertiary-color); " />
         <label class="label">
-          <span class="label-text-alt text-error">* Required</span>
+          <span class="label-text-alt" style="color: var(--error-text);">* Required</span>
         </label>
       </div>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">Where is your recipe from?</span>
         </label>
-        <input type="text" id="newRecipeLocation" placeholder="Type here"
-          class="input input-bordered input-success w-full" />
+        <input type="text" id="newRecipeLocation" placeholder="Type here" class="input input-bordered w-full"
+          style="border-color: var(--tertiary-color); " />
         <label class="label">
-          <span class="label-text-alt text-error">* Required</span>
+          <span class="label-text-alt" style="color: var(--error-text);">* Required</span>
         </label>
       </div>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">Pick the type of this dish</span>
         </label>
-        <select id="newRecipeType" class="select select-bordered">
+        <select id="newRecipeType" class="select select-bordered" style="border-color: var(--tertiary-color); ">
           <option selected>Breakfast</option>
           <option>Brunch</option>
           <option>Snack</option>
@@ -73,7 +76,7 @@
           <option>Dinner</option>
         </select>
         <label class="label">
-          <span class="label-text-alt text-error">* Required</span>
+          <span class="label-text-alt" style="color: var(--error-text);">* Required</span>
         </label>
       </div>
       <div class="form-control w-full">
@@ -81,17 +84,20 @@
           <span class="label-text">Ingredients</span>
         </label>
         <textarea id="newRecipeIngredients" placeholder="2 Eggs, 1/2 cup of Sugar, 1 teaspoon of Butter..."
-          class="textarea textarea-success w-full"></textarea>
+          class="textarea w-full" style="border-color: var(--tertiary-color); "></textarea>
       </div>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">How do you make it?</span>
         </label>
-        <textarea id="newRecipeSteps" placeholder="Mix the eggs with the butter..."
-          class="textarea textarea-success w-full"></textarea>
+        <textarea id="newRecipeSteps" placeholder="Mix the eggs with the butter..." class="textarea w-full"
+          style="border-color: var(--tertiary-color); "></textarea>
       </div>
       <div class="w-full pt-4">
-        <button class="btn btn-block btn-success" onclick="insertRecipe()">Add Recipe</button>
+        <button class="btn btn-block"
+          style="border-color: var(--tertiary-color); background-color: var(--tertiary-color); color: var(--primary-color);"
+          onclick="insertRecipe()">Add
+          Recipe</button>
       </div>
     </form>
     <form method="dialog" class="modal-backdrop">
@@ -104,31 +110,31 @@
       <h3 class="font-bold text-lg">Edit Recipe</h3>
       <p class="py-4">Press ESC key or click outside to cancel</p>
       <input type="hidden" id="editRecipeIndexRow" value="" />
-      <div class="form-control w-full ">
+      <div class="form-control w-full">
         <label class="label">
           <span class="label-text">What your recipe name?</span>
         </label>
-        <input type="text" id="editRecipeName" placeholder="Type here"
-          class="input input-bordered input-success w-full" />
+        <input type="text" id="editRecipeName" placeholder="Type here" class="input input-bordered w-full"
+          style="border-color: var(--tertiary-color); " />
         <label class="label">
-          <span class="label-text-alt text-error">* Required</span>
+          <span class="label-text-alt" style="color: var(--error-text);">* Required</span>
         </label>
       </div>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">Where is your recipe from?</span>
         </label>
-        <input type="text" id="editRecipeLocation" placeholder="Type here"
-          class="input input-bordered input-success w-full" />
+        <input type="text" id="editRecipeLocation" placeholder="Type here" class="input input-bordered w-full"
+          style="border-color: var(--tertiary-color); " />
         <label class="label">
-          <span class="label-text-alt text-error">* Required</span>
+          <span class="label-text-alt" style="color: var(--error-text);">* Required</span>
         </label>
       </div>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">Pick the type of this dish</span>
         </label>
-        <select id="editRecipeType" class="select select-bordered">
+        <select id="editRecipeType" class="select select-bordered" style="border-color: var(--tertiary-color); ">
           <option selected>Breakfast</option>
           <option>Brunch</option>
           <option>Snack</option>
@@ -138,7 +144,7 @@
           <option>Dinner</option>
         </select>
         <label class="label">
-          <span class="label-text-alt text-error">* Required</span>
+          <span class="label-text-alt" style="color: var(--error-text);">* Required</span>
         </label>
       </div>
       <div class="form-control w-full">
@@ -146,17 +152,20 @@
           <span class="label-text">Ingredients</span>
         </label>
         <textarea id="editRecipeIngredients" placeholder="2 Eggs, 1/2 cup of Sugar, 1 teaspoon of Butter..."
-          class="textarea textarea-success w-full"></textarea>
+          class="textarea w-full" style="border-color: var(--tertiary-color); "></textarea>
       </div>
       <div class="form-control w-full">
         <label class="label">
           <span class="label-text">How do you make it?</span>
         </label>
-        <textarea id="editRecipeSteps" placeholder="Mix the eggs with the butter..."
-          class="textarea textarea-success w-full"></textarea>
+        <textarea id="editRecipeSteps" placeholder="Mix the eggs with the butter..." class="textarea w-full"
+          style="border-color: var(--tertiary-color); "></textarea>
       </div>
       <div class="w-full pt-4">
-        <button class="btn btn-block btn-success" onclick="editRecipe()">Edit Recipe</button>
+        <button class="btn btn-block"
+          style="border-color: var(--tertiary-color); background-color: var(--tertiary-color); color: var(--secondary-color);"
+          onclick="editRecipe()">Edit
+          Recipe</button>
       </div>
     </form>
     <form method="dialog" class="modal-backdrop">
@@ -172,10 +181,14 @@
 
       <div class="w-full flex">
         <div class="w-1/2 pt-4 pr-1">
-          <button class="btn btn-block btn-error" onclick="cancelDelete()">Cancel</button>
+          <button class="btn btn-block"
+            style="border-color: var(--error-color); background-color: var(--error-color); color: var(--error-text);"
+            onclick="cancelDelete()">Cancel</button>
         </div>
         <div class="w-1/2 pt-4 pl-1">
-          <button class="btn btn-block btn-success" onclick="deleteRecipe()">Confirm Delete</button>
+          <button class="btn btn-block"
+            style="border-color: var(--tertiary-color); background-color: var(--tertiary-color); color: var(--primary-color);"
+            onclick="deleteRecipe()">Confirm Delete</button>
         </div>
       </div>
     </form>
@@ -185,11 +198,11 @@
   </dialog>
 
   <div id="recipes-container" class="min-h-16 bg-base-200 flex flex-wrap gap-8 justify-center">
-    <span class="loading loading-ring loading-lg text-success"></span>
+    <span class="loading loading-ring loading-lg" style="background-color: var(--tertiary-color);"></span>
   </div>
 
   <div id="footer"
-    style="display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 2rem 0px 1rem; background-color: var(--primary-color); width: 100vw;">
+    style="display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 32px; padding: 2rem 0px 1rem; background-color: var(--primary-color); width: 100vw;">
     <!-- <div style="display: flex; justify-content: center; gap: 3rem;">
       <img src="assets/svg/linkedin.svg" alt="LinkedIn" className="socialIcon" />
       <img src="assets/svg/github.svg" alt="GitHub" className="socialIcon" />
