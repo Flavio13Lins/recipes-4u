@@ -20,7 +20,7 @@ const dishesTypesImageMap = {
     "https://www.realsimple.com/thmb/LxM_HDq7JxFZ2RLyApNnIhOaxvA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/garlicky-layered-potatoes-recipe-1120foo-6b5e1d939de6490e971e7065f138b35f.jpg",
 };
 
-const loading = `<span class="loading loading-ring loading-lg text-success"></span>`;
+const loading = `<span class="loading loading-ring loading-lg" style="background-color: var(--tertiary-color);"></span>`;
 
 async function getRecipeByIndex(index) {
   const res = await fetch(urlGet);
@@ -30,8 +30,8 @@ async function getRecipeByIndex(index) {
 
 async function loadPage() {
   const nickName = "Flavio13Lins";
-  var currentYear = new Date().getFullYear();
-  var footerYearAndOwner = document.getElementById("thisYearAndOwner");
+  const currentYear = new Date().getFullYear();
+  const footerYearAndOwner = document.getElementById("thisYearAndOwner");
   footerYearAndOwner.innerHTML =
     currentYear + " — " + `<strong>${nickName}</strong>`;
   const res = await fetch(urlGet);
@@ -49,16 +49,16 @@ async function loadPage() {
     }" alt="event" /></figure>
       <div class="card-body">
         <div class="flex justify-end dropdown dropdown-end">
-          <label tabindex="${index}" class="btn btn-xs btn-square btn-outline btn-success">✏️</label>
+          <label tabindex="${index}" class="btn btn-xs btn-square btn-outline" style="color: var(--quaternary-color)">✏️</label>
           <ul tabindex="${index}" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            <li class="btn btn-outline btn-xs btn-info" onclick="showEditModal(${index})"><a>Edit</a></li>
-            <li class="btn btn-outline btn-xs btn-error" onclick="showDeleteModal(${index})"><a>Delete</a></li>
+            <button class="edit-txt-btn" onclick="showEditModal(${index})">Edit</button>
+            <button class="delete-txt-btn" onclick="showDeleteModal(${index})">Delete</button>
           </ul>
         </div>
         <h2 class="card-title">${event.Name}</h2>
         <p>${event.Type}<br/>from ${event.Location}</p>
         <div class="card-actions justify-end">
-          <button class="btn btn-sm btn-outline btn-success" onclick="showDetailsModal(${index})">Details</button>
+          <button class="btn btn-sm btn-outline" style="color: var(--quaternary-color)" onclick="showDetailsModal(${index})">Details</button>
         </div>
       </div>
     </div>
