@@ -1,9 +1,62 @@
-:root {
-  --primary-color:#1c3112;
-  --secondary-color:#0C4B41;
-  --tertiary-color:#3CB371;
-  --quaternary-color:#CBD5A9;
-  --quinary-color:#29374D;
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-color:#1c3112;
+    --secondary-color:#0C4B41;
+    --tertiary-color:#3CB371;
+    --quaternary-color:#CBD5A9;
+    --quinary-color:#29374D;
+    --error-color:#f87171;
+    --error-text:#7f1d1d;
+    --dark-text: #1f2739;
+    --light-text: #CBD5A9;
+  }
+  .edit-txt-btn:hover {
+    background-color: var(--quaternary-color);
+    color: var(--dark-text);
+  }
+  .edit-txt-btn {
+    border: solid 1px;
+    border-radius: 8px;
+    border-color: var(--quaternary-color);
+    color: var(--dark-text);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color:#1c3112;
+    --secondary-color:#0C4B41;
+    --tertiary-color:#3CB371;
+    --quaternary-color:#CBD5A9;
+    --quinary-color:#29374D;
+    --error-color:#7f1d1d;
+    --error-text:#f87171;
+    --dark-text: #a6adba;
+    --light-text: #29374D;
+  }
+  .edit-txt-btn:hover {
+    background-color: var(--quaternary-color);
+    color: var(--light-text);
+  }
+  .edit-txt-btn {
+    border: solid 1px;
+    border-radius: 8px;
+    border-color: var(--quaternary-color);
+    color: var(--dark-text);
+  }
+}
+
+
+
+.delete-txt-btn:hover {
+  background-color: var(--error-color);
+  color: var(--error-text);
+}
+.delete-txt-btn {
+  border: solid 1px;
+  border-radius: 8px;
+  border-color: var(--error-color);
+  color: var(--dark-text);
 }
 
 img.socialIcon {
@@ -66,4 +119,15 @@ img.copyIcon:hover {
 
 .tooltip:hover .copyTooltip {
   visibility: visible;
+}
+
+
+.double-border::before {
+  content: '';
+  position: absolute;
+  top: -6px; /* Adjust as needed */
+  left: -6px; /* Adjust as needed */
+  right: -6px; /* Adjust as needed */
+  bottom: -6px; /* Adjust as needed */
+  border: 2px solid blue; /* Second border color */
 }
