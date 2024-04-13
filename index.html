@@ -213,12 +213,12 @@
     <div style="display: flex; color: white;">
       Email me at
       <a class="email" href="mailto:flavio13lins@gmail.com">flavio13lins@gmail.com</a>
-      <!-- <div class="tooltip">
+      <div class="tooltip" onclick="copyEmail()" onmouseout="resetCopyEmail()">
 
         <img src="assets/svg/copy.svg" alt="copyIcon" class="copyIcon">
 
-        <span class="copyTooltip">Copy email</span>
-      </div> -->
+        <span id="copyText" class="copyTooltip"></span>
+      </div>
     </div>
     <div style="color: white;" id="thisYearAndOwner"></div>
     </p>
