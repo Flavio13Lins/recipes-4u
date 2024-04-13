@@ -1,3 +1,12 @@
+// Social Networks
+const mapSocialNetwork = {
+  LinkedIn: "https://linkedin.com/in/flavio13lins",
+  GitHub: "https://github.com/Flavio13Lins",
+  Instagram: "https://www.instagram.com/Flavio13Lins",
+  Discord: "https://discordid.netlify.app/?id=654752684884361265",
+};
+
+// API
 const urlPost =
   "https://script.google.com/macros/s/AKfycbx7viZKs2_1Dx0r9wGJnchVfNjFwvK0BhZf1q5lGYdi-x0ZOreFfOJbUfKdsUvZxSdo/exec";
 const urlGet =
@@ -251,6 +260,10 @@ function copyEmail() {
 
 function resetCopyEmail() {
   document.getElementById("copyText").innerHTML = "Copy email";
+}
+
+function openSocial(name) {
+  window.open(mapSocialNetwork[name], "_blank").focus();
 }
 
 loadPage();
