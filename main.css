@@ -60,9 +60,11 @@
 }
 
 img.socialIcon {
+  cursor:pointer;
   height: 24px;
   width: 24px;
 }
+
 /* email link */
 a.email {
   color: var(--tertiary-color);
