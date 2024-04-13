@@ -29,6 +29,7 @@ async function getRecipeByIndex(index) {
 }
 
 async function loadPage() {
+  document.getElementById("copyText").innerHTML = "Copy email";
   const nickName = "Flavio13Lins";
   const currentYear = new Date().getFullYear();
   const footerYearAndOwner = document.getElementById("thisYearAndOwner");
@@ -241,6 +242,15 @@ async function deleteRecipe() {
     resetFormValues();
     await loadPage();
   }
+}
+
+function copyEmail() {
+  navigator.clipboard.writeText("flavio13lins@gmail.com");
+  document.getElementById("copyText").innerHTML = "Copied!";
+}
+
+function resetCopyEmail() {
+  document.getElementById("copyText").innerHTML = "Copy email";
 }
 
 loadPage();
