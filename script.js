@@ -1,5 +1,6 @@
 // Social Networks
 const mapSocialNetwork = {
+  Resume: "https://flavio13lins.github.io/FlavioResume",
   LinkedIn: "https://linkedin.com/in/flavio13lins",
   GitHub: "https://github.com/Flavio13Lins",
   Instagram: "https://www.instagram.com/Flavio13Lins",
@@ -263,7 +264,8 @@ function resetCopyEmail() {
 }
 
 function openSocial(name) {
-  window.open(mapSocialNetwork[name], "_blank").focus();
+  if (mapSocialNetwork[name])
+    window.open(mapSocialNetwork[name], "_blank").focus();
 }
 
 loadPage();
