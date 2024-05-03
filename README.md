@@ -2,6 +2,8 @@
 
 This is a simple web application for managing and sharing recipes. Users can add, edit, and delete recipes, as well as view recipes added by other users. The main idea was to create a place where anyone can find recipes and how to make any food from different parts of the world, all you need is the ingredients and the step-by-step process.
 
+https://flavio13lins.github.io/recipes-4u/
+
 ## Features
 
 - **Add Recipe**: Users can add their own recipes by providing details such as name, origin, type, ingredients, and steps.
